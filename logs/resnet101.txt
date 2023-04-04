@@ -1,0 +1,34 @@
+epoch 1: train loss: 0.09917, train acc: 0.006452, val loss: 0.09491, val acc:0.009115
+epoch 2: train loss: 0.09137, train acc: 0.01897, val loss: 0.08424, val acc:0.03411
+epoch 3: train loss: 0.07824, train acc: 0.05304, val loss: 0.06885, val acc:0.09401
+epoch 4: train loss: 0.06348, train acc: 0.128, val loss: 0.05339, val acc:0.2167
+epoch 5: train loss: 0.05099, train acc: 0.2314, val loss: 0.04107, val acc:0.3385
+epoch 6: train loss: 0.04055, train acc: 0.3553, val loss: 0.03281, val acc:0.4643
+epoch 7: train loss: 0.03246, train acc: 0.4621, val loss: 0.02652, val acc:0.5591
+epoch 8: train loss: 0.026, train acc: 0.5596, val loss: 0.02123, val acc:0.6315
+epoch 9: train loss: 0.02131, train acc: 0.6312, val loss: 0.01769, val acc:0.6919
+epoch 10: train loss: 0.01773, train acc: 0.6918, val loss: 0.01616, val acc:0.7164
+Epoch 10:save models
+epoch 11: train loss: 0.01505, train acc: 0.7355, val loss: 0.01459, val acc:0.7422
+epoch 12: train loss: 0.01312, train acc: 0.7659, val loss: 0.01318, val acc:0.7695
+epoch 13: train loss: 0.01121, train acc: 0.7994, val loss: 0.0119, val acc:0.7823
+epoch 14: train loss: 0.009916, train acc: 0.8222, val loss: 0.01181, val acc:0.7948
+epoch 15: train loss: 0.008553, train acc: 0.8452, val loss: 0.01095, val acc:0.8049
+epoch 16: train loss: 0.007739, train acc: 0.8589, val loss: 0.01064, val acc:0.8104
+epoch 17: train loss: 0.006823, train acc: 0.8764, val loss: 0.009893, val acc:0.8299
+epoch 18: train loss: 0.005972, train acc: 0.8927, val loss: 0.009911, val acc:0.8174
+epoch 19: train loss: 0.005302, train acc: 0.9071, val loss: 0.00964, val acc:0.832
+epoch 20: train loss: 0.004781, train acc: 0.9157, val loss: 0.009536, val acc:0.8292
+Epoch 20:save models
+epoch 21: train loss: 0.004169, train acc: 0.9274, val loss: 0.008912, val acc:0.8422
+epoch 22: train loss: 0.003777, train acc: 0.9351, val loss: 0.008717, val acc:0.8471
+epoch 23: train loss: 0.003389, train acc: 0.9424, val loss: 0.008583, val acc:0.8471
+epoch 24: train loss: 0.003045, train acc: 0.9482, val loss: 0.008535, val acc:0.8469
+epoch 25: train loss: 0.002696, train acc: 0.9558, val loss: 0.008704, val acc:0.8453
+epoch 26: train loss: 0.002419, train acc: 0.9605, val loss: 0.008573, val acc:0.8518
+epoch 27: train loss: 0.002254, train acc: 0.9632, val loss: 0.008388, val acc:0.8508
+epoch 28: train loss: 0.002027, train acc: 0.969, val loss: 0.008285, val acc:0.8565
+epoch 29: train loss: 0.001763, train acc: 0.9741, val loss: 0.008563, val acc:0.8578
+epoch 30: train loss: 0.0016, train acc: 0.9767, val loss: 0.008295, val acc:0.8555
+Epoch 30:save models
+
