@@ -3,6 +3,8 @@ import random
 import os
 import shutil
 import pandas as pd
+from matplotlib import pyplot as plt
+import numpy as np
 
 
 def CopyFile(imageDir, test_rate, save_test_dir, save_train_dir):
@@ -63,23 +65,42 @@ def arrays_to_csv(csv_path, train_accs, train_losss, test_accs, test_losss, trai
         data.to_csv(csv_path, mode='a', header=False, index=False)
 
 
-def plot_result(net_name, train_accs, train_losss, test_accs, test_losss):
+def csv_to_array(csv_path):
+    data = pd.read_csv(csv_path)
+    return np.array(data[['train acc', 'train loss', 'val acc', 'val loss']]).T.tolist() + [False]
+
+
+def plot_result(net_name, train_accs, train_losss, test_accs, test_losss, is_train=True):
+    font1 = {'family': 'Times New Roman', 'size': 28}
+    font2 = {'family': 'Times New Roman', 'size': 24}
+    plt.figure(figsize=(16, 8))
     plt.subplot(1, 2, 1)
-    plt.title('Train and Validation Accuracy')
-    plt.plot(np.arange(num_epochs), np.array(test_accs))
-    plt.plot(np.arange(num_epochs), np.array(train_accs))
+    plt.xlabel('epochs', font1)
+    plt.ylabel('acc (%)', font1)
+    plt.plot(np.arange(len(train_accs)), np.array(test_accs)*100, color='#BFBF00', label='test acc')
+    plt.plot(np.arange(len(train_accs)), np.array(train_accs)*100, color='red', label='train acc')
+    plt.legend(prop=font2)
+    ax = plt.gca()  # gca:get current axis得到当前轴
+    # 设置图片的右边框和上边框为不显示
+    ax.spines['right'].set_color('none')
+    ax.spines['top'].set_color('none')
     plt.subplot(1, 2, 2)
-    plt.title('Train and Validation Loss')
-    plt.plot(np.arange(num_epochs), np.array(test_losss))
-    plt.plot(np.arange(num_epochs), np.array(train_losss))
-    plt.savefig(f'./logs/{net_name}.png')
+    plt.xlabel('epochs', font1)
+    plt.ylabel('loss', font1)
+    plt.plot(np.arange(len(train_accs)), np.array(test_losss), color='#BFBF00', label='test loss')
+    plt.plot(np.arange(len(train_accs)), np.array(train_losss), color='red', label='train loss')
+    plt.legend(prop=font2)
+    ax = plt.gca()  # gca:get current axis得到当前轴
+    # 设置图片的右边框和上边框为不显示
+    ax.spines['right'].set_color('none')
+    ax.spines['top'].set_color('none')
+    if is_train:
+        plt.savefig(f'./logs/{net_name}.png')
+    else:
+        plt.savefig(f'../logs/{net_name}.png')
     plt.show()
 
 
 if __name__ == '__main__':
-    df = pd.read_csv('../logs/resnext101.csv')
-    df_array = df.to_numpy()
-    for j, i in enumerate(df_array.T[-1]):
-        df_array.T[-1][j] = eval(i)[j]
-    df = pd.DataFrame(df_array)
-    df.to_csv('../logs/resnext101.csv', index=False)
+    modelname = 'resnet101'
+    plot_result(modelname, *csv_to_array(f'../logs/{modelname}.csv'))

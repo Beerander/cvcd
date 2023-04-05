@@ -3,8 +3,9 @@ import torch
 
 
 if __name__ == '__main__':
-    modelname = 'resnet101'
-    modelpath = f'./model/{modelname}_epoch39.pt'
+    modelname = 'resnext101_pretrained'
+    modelpath = f'./model/{modelname}_epoch40.pt'
     net.load_state_dict(torch.load(modelpath), strict=True)
-    ceshi(net, criterion, testloader, device, is_training=False)
+    acc, loss = ceshi(net, criterion, testloader, device, is_training=False)
+    print(f'accuracy: {acc}, loss: {loss}')
 
